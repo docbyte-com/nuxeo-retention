@@ -1,23 +1,15 @@
 version: 0.2
 env:
-  secrets-manager:
-    SONAR_USER: "SonarQubeUserSecretNew-wL3Hp9jD2h96:username"
-    SONAR_PASSWORD: "SonarQubeUserSecretNew-wL3Hp9jD2h96:password"
-    SONAR_ACCESS_TOKEN: "SonarQubeUserSecretNew-wL3Hp9jD2h96:access_token"
   variables:
     CHANGELIST: "-SNAPSHOT"
     AWS_ACCOUNT_ID: "518241560725"
-    SONAR_HOST: "http://54.229.164.107:9000"
-    SONAR_PROJECT_KEY: "nuxeo-core"
-
 
 phases:
-
   install:
     runtime-versions:
       java: corretto21
     commands:
-      - aws s3 sync s3://db-dev-buildartifacts/tools/ ~/tools/
+      - aws s3 sync s3://dev.tools.s3.devops.docbyte.cloud/ ~/tools/
       - chmod a+x -R ~/tools/
       - n 14
       - . ~/tools/prepEnv-new.sh
