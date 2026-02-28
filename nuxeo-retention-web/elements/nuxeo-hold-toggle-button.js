@@ -35,7 +35,7 @@ class RetentionHoldToggleButton extends mixinBehaviors([FiltersBehavior, FormatB
     return html`
       <style include="nuxeo-styles nuxeo-action-button-styles">
         :host([hold]) paper-icon-button {
-          color: var(--icon-toggle-outline-color, var(--nuxeo-action-color-activated));
+          color: var(--icon-toggle-outline-color, var(--nuxeo-app-header);
         }
       </style>
 
